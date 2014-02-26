@@ -31,7 +31,6 @@ def generateCodeline(bc, chf, rappen, help1, referenceNumber, help2, participant
     if len(chf) < 8:  # check if amount has less than eight chars
         chf = (8-len(chf))*"0" + chf
         
-    print "CHF", chf
     # dynamic, check digit for bc and value (calculated with modulo 10 recursive)
     p1 = moduloTenRecursive(bc + chf + rappen);
 
