@@ -3,7 +3,11 @@
 Function for generating ISR-numbers for Orange inpayment slip (ISR), so called "Oranger Einzahlungsschein" (ESR/ESR+).
 
  
+## Installation 
 
+### From the global PyPI
+
+	pip install python-payment-slip
 
 ## Usage
 
