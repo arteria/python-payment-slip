@@ -13,4 +13,4 @@ Function for generating ISR-numbers for Orange inpayment slip (ISR), so called "
 	
 ## More info
 
-* PostFinace [Orange inpayment slip](https://www.postfinance.ch/en/biz/prod/pay/debsolution/inpayref/detail.html) detals
+* PostFinance details about the [Orange inpayment slip](https://www.postfinance.ch/en/biz/prod/pay/debsolution/inpayref/detail.html) 
