@@ -7,7 +7,7 @@ Function for generating ISR-numbers for Orange inpayment slip (ISR), so called "
 
 ### From the global PyPI
 
-	pip install python-payment-slip
+	pip install python-paymentslip
 
 ## Usage
 
