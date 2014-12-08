@@ -5,7 +5,7 @@ Thanks
 
  @author Jason Rubichi, Nicolas Zanotti, Philippe O. Wagner
  @param
-    bc "Belegartcodes": fix, 01 or 04
+    bc "Belegartcodes": fix, "01" or "04"
     chf: dynamic, amount in chf without rappen, must have eight chars minimum (if less than eight chars, insert zeros before)
     rappen: dynamic, amount in rappen
     help1, help2, help3: fix, "+" or ">", no editing required
@@ -33,18 +33,13 @@ def generateCodeline(bc, chf, rappen, help1, referenceNumber, help2, participant
         if len(chf) < 8:  # check if amount has less than eight chars
             chf = (8-len(chf))*"0" + chf
     elif str(bc) == "04":
-        p1 = moduloTenRecursive(bc);
+        p1 = moduloTenRecursive(bc)
     else:
         raise Exception("Belegart nicht unterstuetzt!")
-        
     # dynamic, check digit for bc and value (calculated with modulo 10 recursive)
-    p1 = moduloTenRecursive(bc + chf + rappen);     
-    
+    p1 = moduloTenRecursive(bc + chf + rappen)     
     # dynamic, check digit for referenceNumber (calculated with modulo 10 recursive)
-    p2 = moduloTenRecursive(referenceNumber);
-
+    p2 = moduloTenRecursive(referenceNumber)
     # dynamic, check digit for participantNumber (calculated with modulo 10 recursive)
-    p3 = moduloTenRecursive(participantNumber);
-    return bc + chf + rappen + p1 + help1 + referenceNumber + p2 + help2 + " " + participantNumber + p3 + help3;
-
- 
+    p3 = moduloTenRecursive(participantNumber)
+    return bc + chf + rappen + p1 + help1 + referenceNumber + p2 + help2 + " " + participantNumber + p3 + help3
