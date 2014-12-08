@@ -26,14 +26,20 @@ def moduloTenRecursive(number):
     
      
 def generateCodeline(bc, chf, rappen, help1, referenceNumber, help2, participantNumber, help3):
-    chf = str(chf)
-    rappen = str(rappen) 
-    if len(chf) < 8:  # check if amount has less than eight chars
-        chf = (8-len(chf))*"0" + chf
+    chf = rappen = ''
+    if str(bc) == "01":
+        chf = str(chf)
+        rappen = str(rappen) 
+        if len(chf) < 8:  # check if amount has less than eight chars
+            chf = (8-len(chf))*"0" + chf
+    elif str(bc) == "04":
+        p1 = moduloTenRecursive(bc);
+    else:
+        raise Exception("Belegart nicht unterstuetzt!")
         
     # dynamic, check digit for bc and value (calculated with modulo 10 recursive)
-    p1 = moduloTenRecursive(bc + chf + rappen);
-
+    p1 = moduloTenRecursive(bc + chf + rappen);     
+    
     # dynamic, check digit for referenceNumber (calculated with modulo 10 recursive)
     p2 = moduloTenRecursive(referenceNumber);
 
