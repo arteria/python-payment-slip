@@ -26,8 +26,10 @@ def moduloTenRecursive(number):
     
      
 def generateCodeline(bc, chf, rappen, help1, referenceNumber, help2, participantNumber, help3):
+    pre_fixer = 10*' '
     chf = rappen = ''
     if str(bc) == "01":
+        pre_fixer = ''
         chf = str(chf)
         rappen = str(rappen) 
         if len(chf) < 8:  # check if amount has less than eight chars
@@ -42,4 +44,4 @@ def generateCodeline(bc, chf, rappen, help1, referenceNumber, help2, participant
     p2 = moduloTenRecursive(referenceNumber)
     # dynamic, check digit for participantNumber (calculated with modulo 10 recursive)
     p3 = moduloTenRecursive(participantNumber)
-    return bc + chf + rappen + p1 + help1 + referenceNumber + p2 + help2 + " " + participantNumber + p3 + help3
+    return pre_fixer + bc + chf + rappen + p1 + help1 + referenceNumber + p2 + help2 + " " + participantNumber + p3 + help3
