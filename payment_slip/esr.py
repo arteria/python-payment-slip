@@ -23,22 +23,22 @@ def moduloTenRecursive(number):
         t = carryover + int(i)
         carryover = lut[t % 10];
     return str((10 - carryover) % 10)
-    
-     
+
 def generateCodeline(bc, chf, rappen, help1, referenceNumber, help2, participantNumber, help3):
-    chf = ''
-    rappen = ''
     if str(bc) == "01":
         chf = str(chf)
         rappen = str(rappen) 
         if len(chf) < 8:  # check if amount has less than eight chars
             chf = (8-len(chf))*"0" + chf
+        if len(rappen) < 2:  # check if amount has less than 2 chars
+            rappen = (2-len(rappen))*"0" + rappen
     elif str(bc) == "04":
-        p1 = moduloTenRecursive(bc)
+        chf = ''
+        rappen = ''
     else:
         raise Exception("Belegart nicht unterstuetzt!")
     # dynamic, check digit for bc and value (calculated with modulo 10 recursive)
-    p1 = moduloTenRecursive(bc + chf + rappen)     
+    p1 = moduloTenRecursive(bc + chf + rappen)  
     # dynamic, check digit for referenceNumber (calculated with modulo 10 recursive)
     p2 = moduloTenRecursive(referenceNumber)
     # dynamic, check digit for participantNumber (calculated with modulo 10 recursive)
